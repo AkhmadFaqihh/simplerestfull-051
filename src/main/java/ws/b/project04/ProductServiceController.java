@@ -36,7 +36,7 @@ public class ProductServiceController {
         honey.setId("1");
         // Mengatur Name dari variable Honey
         honey.setName("Honey");
-
+        
         honey.setPrice(3000);
         
         honey.setNumber(5);
@@ -75,7 +75,7 @@ public class ProductServiceController {
         // Mengatur jika productRepo sudah memiliki Id
         if (productRepo.containsKey(product.getId()))
             // Mengembalikan nilai dari ResponseEntity
-            return new ResponseEntity<>("Prodcuct is already Exist", HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>("Prodcuct is already Exist" + product.getId(), HttpStatus.NOT_FOUND);
         // Mengatur productRepo dengan memasukkan Name dan Id dari product
         productRepo.put(product.getId(), product);
         // Mengembalikan nilai dari ResponseEntity
